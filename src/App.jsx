@@ -68,9 +68,9 @@ function App() {
   const getFilteredForests = () => {
     if (filter === 'all') return forestsData
     if (filter === 'high') return forestsData.filter(f => f.importance === 'HIGH')
-    if (filter === 'tropical') return forestsData.filter(f => f.category === 'Tropical')
-    if (filter === 'mountain') return forestsData.filter(f => f.category === 'Mountain')
-    if (filter === 'coastal') return forestsData.filter(f => f.category === 'Coastal')
+    if (filter === 'tropical') return forestsData.filter(f => f.category.includes('Tropical'))
+    if (filter === 'mountain') return forestsData.filter(f => f.category.includes('Montane') || f.category === 'Alpine')
+    if (filter === 'coastal') return forestsData.filter(f => f.name.includes('Littoral') || f.name.includes('Swamp') || f.name.includes('Mangrove'))
     return forestsData
   }
 
@@ -282,11 +282,10 @@ function App() {
             <div className="flashcard-back">
               <div style={{textAlign: 'left', width: '100%'}}>
                 <div className="forest-info"><strong>Category:</strong> {forest.category}</div>
-                <div className="forest-info"><strong>Sub-types:</strong> {forest.subTypes?.join(', ') || 'N/A'}</div>
-                <div className="forest-info"><strong>Characteristics:</strong></div>
-                <ul style={{margin: '5px 0', paddingLeft: '20px', fontSize: '0.9rem'}}>
-                  {forest.characteristics?.slice(0, 3).map((char, i) => <li key={i}>{char}</li>)}
-                </ul>
+                {forest.rainfall && <div className="forest-info"><strong>Rainfall:</strong> {forest.rainfall}</div>}
+                {forest.temperature && <div className="forest-info"><strong>Temperature:</strong> {forest.temperature}</div>}
+                {forest.altitude && <div className="forest-info"><strong>Altitude:</strong> {forest.altitude}</div>}
+                {forest.percentageArea && <div className="forest-info"><strong>% of Total Area:</strong> {forest.percentageArea}</div>}
                 <div className="forest-info" style={{marginTop: '10px', fontSize: '0.85rem', fontStyle: 'italic'}}>
                   <strong>Importance:</strong> {forest.importance}
                 </div>
@@ -355,28 +354,16 @@ function App() {
               Tropical
             </button>
             <button 
-              className={`filter-btn ${filter === 'nontropical' ? 'active' : ''}`}
-              onClick={() => setFilter('nontropical')}
+              className={`filter-btn ${filter === 'mountain' ? 'active' : ''}`}
+              onClick={() => setFilter('mountain')}
             >
-              Non-Tropical
+              Montane/Alpine
             </button>
             <button 
               className={`filter-btn ${filter === 'coastal' ? 'active' : ''}`}
               onClick={() => setFilter('coastal')}
             >
-              Coastal
-            </button>
-            <button 
-              className={`filter-btn ${filter === '' ? 'active' : ''}`}
-              onClick={() => setFilter('')}
-            >
-              
-            </button>
-            <button 
-              className={`filter-btn ${filter === '' ? 'active' : ''}`}
-              onClick={() => setFilter('')}
-            >
-              
+              Coastal/Mangroves
             </button>
           </div>
         </div>
@@ -394,11 +381,14 @@ function App() {
                 <span className={`tag ${forest.importance === 'HIGH' ? 'high' : ''}`}>
                   {forest.importance}
                 </span>
+                {forest.percentageArea && <span className="tag">{forest.percentageArea}</span>}
               </div>
-              <div className="forest-info"><strong>Sub-types:</strong> {forest.subTypes?.slice(0, 3).join(', ') || 'Various'}</div>
+              {forest.rainfall && <div className="forest-info"><strong>Rainfall:</strong> {forest.rainfall}</div>}
+              {forest.temperature && <div className="forest-info"><strong>Temperature:</strong> {forest.temperature}</div>}
+              {forest.altitude && <div className="forest-info"><strong>Altitude:</strong> {forest.altitude}</div>}
               <div className="forest-info"><strong>Characteristics:</strong></div>
               <ul style={{margin: '5px 0', paddingLeft: '20px', fontSize: '0.85rem'}}>
-                {forest.characteristics?.slice(0, 2).map((char, i) => <li key={i}>{char.substring(0, 80)}...</li>)}
+                {forest.characteristics?.slice(0, 2).map((char, i) => <li key={i}>{char.substring(0, 100)}...</li>)}
               </ul>
             </div>
           ))}
