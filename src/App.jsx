@@ -280,14 +280,65 @@ function App() {
               <p className="flashcard-hint">👆 Tap to flip</p>
             </div>
             <div className="flashcard-back">
-              <div style={{textAlign: 'left', width: '100%'}}>
+              <div style={{textAlign: 'left', width: '100%', maxHeight: '500px', overflowY: 'auto', paddingRight: '10px'}}>
                 <div className="forest-info"><strong>Category:</strong> {forest.category}</div>
-                {forest.rainfall && <div className="forest-info"><strong>Rainfall:</strong> {forest.rainfall}</div>}
-                {forest.temperature && <div className="forest-info"><strong>Temperature:</strong> {forest.temperature}</div>}
-                {forest.altitude && <div className="forest-info"><strong>Altitude:</strong> {forest.altitude}</div>}
-                {forest.percentageArea && <div className="forest-info"><strong>% of Total Area:</strong> {forest.percentageArea}</div>}
-                <div className="forest-info" style={{marginTop: '10px', fontSize: '0.85rem', fontStyle: 'italic'}}>
-                  <strong>Importance:</strong> {forest.importance}
+                
+                {/* Climatic Conditions */}
+                <div style={{marginTop: '10px', borderTop: '1px solid #ccc', paddingTop: '8px'}}>
+                  <strong style={{color: '#2e7d32'}}>Climatic Conditions:</strong>
+                  {forest.rainfall && <div className="forest-info"><strong>Rainfall:</strong> {forest.rainfall}</div>}
+                  {forest.temperature && <div className="forest-info"><strong>Temperature:</strong> {forest.temperature}</div>}
+                  {forest.humidity && <div className="forest-info"><strong>Humidity:</strong> {forest.humidity}</div>}
+                  {forest.altitude && <div className="forest-info"><strong>Altitude:</strong> {forest.altitude}</div>}
+                  {forest.salinity && <div className="forest-info"><strong>Salinity:</strong> {forest.salinity}</div>}
+                </div>
+                
+                {/* Characteristics */}
+                {forest.characteristics && forest.characteristics.length > 0 && (
+                  <div style={{marginTop: '10px', borderTop: '1px solid #ccc', paddingTop: '8px'}}>
+                    <strong style={{color: '#2e7d32'}}>Characteristics:</strong>
+                    <ul style={{margin: '5px 0', paddingLeft: '20px', fontSize: '0.85rem'}}>
+                      {forest.characteristics.map((char, i) => <li key={i}>{char}</li>)}
+                    </ul>
+                  </div>
+                )}
+                
+                {/* Distribution */}
+                {forest.distribution && forest.distribution.length > 0 && (
+                  <div style={{marginTop: '10px', borderTop: '1px solid #ccc', paddingTop: '8px'}}>
+                    <strong style={{color: '#2e7d32'}}>Distribution:</strong>
+                    <ul style={{margin: '5px 0', paddingLeft: '20px', fontSize: '0.85rem'}}>
+                      {forest.distribution.map((dist, i) => <li key={i}>{dist}</li>)}
+                    </ul>
+                  </div>
+                )}
+                
+                {/* Important Species */}
+                {forest.importantSpecies && forest.importantSpecies.length > 0 && (
+                  <div style={{marginTop: '10px', borderTop: '1px solid #ccc', paddingTop: '8px'}}>
+                    <strong style={{color: '#2e7d32'}}>Important Trees:</strong>
+                    <div className="forest-info">{forest.importantSpecies.join(', ')}</div>
+                  </div>
+                )}
+                
+                {/* Timber Information */}
+                {forest.timberInfo && (
+                  <div style={{marginTop: '10px', borderTop: '1px solid #ccc', paddingTop: '8px'}}>
+                    <strong style={{color: '#2e7d32'}}>Timber:</strong>
+                    {forest.timberInfo.type && <div className="forest-info"><strong>Type:</strong> {forest.timberInfo.type}</div>}
+                    {forest.timberInfo.quality && <div className="forest-info"><strong>Quality:</strong> {forest.timberInfo.quality}</div>}
+                    {forest.timberInfo.uses && Array.isArray(forest.timberInfo.uses) && (
+                      <div className="forest-info"><strong>Uses:</strong> {forest.timberInfo.uses.join(', ')}</div>
+                    )}
+                  </div>
+                )}
+                
+                {/* Coverage & Importance */}
+                <div style={{marginTop: '10px', borderTop: '1px solid #ccc', paddingTop: '8px'}}>
+                  {forest.percentageArea && <div className="forest-info"><strong>Coverage:</strong> {forest.percentageArea}</div>}
+                  <div className="forest-info" style={{fontStyle: 'italic'}}>
+                    <strong>Importance:</strong> {forest.importance}
+                  </div>
                 </div>
               </div>
             </div>
@@ -383,13 +434,46 @@ function App() {
                 </span>
                 {forest.percentageArea && <span className="tag">{forest.percentageArea}</span>}
               </div>
-              {forest.rainfall && <div className="forest-info"><strong>Rainfall:</strong> {forest.rainfall}</div>}
-              {forest.temperature && <div className="forest-info"><strong>Temperature:</strong> {forest.temperature}</div>}
-              {forest.altitude && <div className="forest-info"><strong>Altitude:</strong> {forest.altitude}</div>}
-              <div className="forest-info"><strong>Characteristics:</strong></div>
-              <ul style={{margin: '5px 0', paddingLeft: '20px', fontSize: '0.85rem'}}>
-                {forest.characteristics?.slice(0, 2).map((char, i) => <li key={i}>{char.substring(0, 100)}...</li>)}
-              </ul>
+              
+              {/* Climatic Conditions */}
+              <div style={{marginTop: '8px', fontSize: '0.85rem'}}>
+                <strong style={{color: '#2e7d32'}}>Climate:</strong>
+                {forest.rainfall && <div className="forest-info">Rainfall: {forest.rainfall}</div>}
+                {forest.temperature && <div className="forest-info">Temp: {forest.temperature}</div>}
+                {forest.altitude && <div className="forest-info">Altitude: {forest.altitude}</div>}
+              </div>
+              
+              {/* Characteristics - show first 3 */}
+              {forest.characteristics && forest.characteristics.length > 0 && (
+                <div style={{marginTop: '8px'}}>
+                  <strong style={{color: '#2e7d32', fontSize: '0.85rem'}}>Characteristics:</strong>
+                  <ul style={{margin: '5px 0', paddingLeft: '20px', fontSize: '0.8rem'}}>
+                    {forest.characteristics.slice(0, 3).map((char, i) => (
+                      <li key={i}>{char.length > 80 ? char.substring(0, 80) + '...' : char}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {/* Distribution - show first 3 */}
+              {forest.distribution && forest.distribution.length > 0 && (
+                <div style={{marginTop: '8px'}}>
+                  <strong style={{color: '#2e7d32', fontSize: '0.85rem'}}>Distribution:</strong>
+                  <div className="forest-info" style={{fontSize: '0.8rem'}}>
+                    {forest.distribution.slice(0, 3).join('; ')}
+                  </div>
+                </div>
+              )}
+              
+              {/* Important Species - show first 4 */}
+              {forest.importantSpecies && forest.importantSpecies.length > 0 && (
+                <div style={{marginTop: '8px'}}>
+                  <strong style={{color: '#2e7d32', fontSize: '0.85rem'}}>Trees:</strong>
+                  <div className="forest-info" style={{fontSize: '0.8rem'}}>
+                    {forest.importantSpecies.slice(0, 4).join(', ')}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
