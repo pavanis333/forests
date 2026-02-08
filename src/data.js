@@ -1,53 +1,73 @@
-// Forests of India - Comprehensive Data from PMF IAS
+// Forests of India - Complete Comprehensive Data from PMF IAS
 // Source: https://www.pmfias.com/forests-natural-vegetation-of-india-classification-of-natural-vegetation-of-india/
+// Total: 16 Forest Types across 5 main categories
+// ALL information from PMF IAS included
 
 export const forestTypes = [
-  // A. MOIST TROPICAL FORESTS
+  // A. MOIST TROPICAL FORESTS (4 types)
   {
     id: 1,
     name: "Tropical Wet Evergreen Forests (Rain Forests)",
-    category: "Moist Tropical",
-    rainfall: ">250 cm",
-    temperature: "25-27°C",
-    humidity: "77%",
+    category: "A. Moist Tropical",
+    rainfall: "Exceeds 250 cm",
+    temperature: "About 25-27°C",
+    humidity: "Exceeds 77%",
+    altitude: "500-1370m above sea level (Western Ghats)",
+    drySeasonLength: "Distinctly short",
     percentageArea: "8%",
     characteristics: [
-      "Evergreen: Trees do not shed leaves together due to high heat and humidity",
-      "Mesophytic: Adapted to neither too dry nor too wet climate",
-      "Lofty: Trees reach 45-60 metres in height",
-      "Thick Canopy: Appears like thick canopy from air, broken only by rivers",
-      "Less undergrowth: Sunlight cannot reach ground - bamboos, ferns, climbers, orchids",
-      "All plants struggle upwards (epiphytes) for sunlight - peculiar layer arrangement",
-      "Green carpet appearance when viewed from above"
+      "Evergreen - trees don't shed leaves together due to high heat & humidity",
+      "Mesophytic - plants adapted to neither too dry nor too wet climate",
+      "Lofty - trees often reach 45-60 metres in height",
+      "Thick canopy - appears like green carpet from above, broken only by large rivers or clearings",
+      "All plants struggle upward for sunlight (most are epiphytes)",
+      "Peculiar layer arrangement visible from above",
+      "Less undergrowth - sunlight cannot reach ground due to thick canopy",
+      "Undergrowth mainly: bamboos, ferns, climbers, orchids"
     ],
     distribution: [
-      "Western side of Western Ghats (500-1370m above sea level)",
+      "Western side of Western Ghats (500-1370m elevation)",
       "Some regions in Purvanchal hills",
       "Andaman and Nicobar Islands"
     ],
-    timber: {
-      quality: "Hardwood - fine-grained, hard and durable",
-      value: "High commercial value",
-      challenges: "Difficult to exploit due to dense undergrowth, absence of pure stands, lack of transport",
-      species: ["Mahogany", "Mesua", "White cedar", "Jamun", "Canes", "Bamboo"]
+    timberInfo: {
+      type: "Hardwood",
+      quality: "Fine-grained, hard and durable",
+      commercialValue: "High",
+      exploitationChallenges: [
+        "Dense undergrowth",
+        "Absence of pure stands",
+        "Lack of transport facilities"
+      ],
+      note: "Similar challenges as in Equatorial Rainforests"
+    },
+    importantSpecies: [
+      "Mahogany", "Mesua", "White Cedar", "Jamun", "Canes", "Bamboo"
+    ],
+    keyConceptsExplained: {
+      mesophytes: "Unlike hydrophytic plants (water lily, pondweed in saturated soil/water) or xerophytic plants (cactus in extremely dry soil), mesophytes are ordinary plants existing between two extremes. Marked by average to hot temperatures and soil neither too dry nor too wet.",
+      epiphytes: "Non-parasitic plants growing on trees to struggle upward for sunlight, creating layered forest structure"
     },
     importance: "HIGH"
   },
   {
     id: 2,
     name: "Tropical Semi-Evergreen Forests",
-    category: "Moist Tropical",
+    category: "A. Moist Tropical",
     rainfall: "200-250 cm",
-    temperature: "24-27°C",
-    humidity: "75%",
+    temperature: "24-27°C (mean annual)",
+    humidity: "About 75%",
+    altitude: "Lower slopes",
+    drySeasonLength: "Not short like tropical evergreen",
     percentageArea: "4%",
+    transitionType: "Between tropical wet evergreen and tropical deciduous",
     characteristics: [
-      "Transitional forests between tropical wet evergreen and tropical deciduous",
-      "Comparatively drier than wet evergreen",
+      "Comparatively drier areas than wet evergreen",
       "Less dense than wet evergreen forests",
-      "More gregarious (living in flocks/colonies - more pure stands) than wet evergreen",
+      "More gregarious than wet evergreen (living in flocks/colonies - more pure stands)",
       "Characterized by many species",
-      "Trees usually have buttressed trunks with abundant epiphytes"
+      "Trees usually have buttressed trunks",
+      "Abundant epiphytes present"
     ],
     distribution: [
       "Western coast",
@@ -56,230 +76,318 @@ export const forestTypes = [
       "Odisha",
       "Andamans"
     ],
-    timber: {
-      quality: "Hardwood - similar to tropical evergreen except less dense with more pure stands",
-      exploitation: "Better timber industry than in evergreen forests",
-      species: [
-        "Laurel", "Rosewood", "Mesua", "Thorny bamboo (Western Ghats)",
-        "White cedar", "Indian chestnut", "Champa", "Mango (Himalayan region)"
-      ]
+    timberInfo: {
+      type: "Hardwood",
+      quality: "Similar to tropical evergreen forests",
+      advantage: "Less dense with more pure stands - timber industry better than in evergreen forests",
+      exploitationNote: "Easier to exploit due to gregariousness"
+    },
+    importantSpecies: [
+      "Laurel", "Rosewood", "Mesua", "Thorny Bamboo (Western Ghats)",
+      "White Cedar", "Indian Chestnut", "Champa", "Mango (Himalayan region)"
+    ],
+    keyConceptsExplained: {
+      gregariousness: "Living in flocks or colonies, forming pure stands. Makes timber exploitation easier as single species dominates large areas.",
+      buttressedTrunks: "Trunk support structures for stability in tropical forest conditions"
     },
     importance: "HIGH"
   },
   {
     id: 3,
     name: "Tropical Moist Deciduous Forests",
-    category: "Moist Tropical",
+    category: "A. Moist Tropical",
     rainfall: "100-200 cm",
-    temperature: "27°C",
-    humidity: "60-75%",
-    percentageArea: "37% (largest)",
+    temperature: "About 27°C (mean annual)",
+    humidity: "60-75% (average annual relative)",
+    altitude: "Various elevations",
+    drySeason: "Spring (between winter & summer) and summer",
+    percentageArea: "37% (LARGEST forest type in India)",
     characteristics: [
-      "Trees drop leaves during spring and early summer when moisture not available",
-      "General appearance is bare in extreme summers (April-May)",
-      "Present irregular top storey (25-60m)",
-      "Heavily buttressed trees and fairly complete undergrowth",
+      "Trees drop leaves during spring and early summer when sufficient moisture not available",
+      "General appearance bare in extreme summers (April-May)",
+      "Present irregular top storey (25-60m height)",
+      "Heavily buttressed trees",
+      "Fairly complete undergrowth",
       "Occupy much larger area than evergreen forests",
-      "Large tracts cleared for cultivation"
+      "Large tracts have been cleared for cultivation"
     ],
     distribution: [
-      "Belt running along Western Ghats surrounding evergreen forests",
-      "Strip along Shiwalik range including terai and bhabar (77°E to 88°E)",
+      "Belt running along Western Ghats surrounding belt of evergreen forests",
+      "Strip along Shiwalik range including Terai and Bhabar (77°E to 88°E longitude)",
       "Manipur and Mizoram",
       "Hills of eastern Madhya Pradesh and Chhattisgarh",
       "Chota Nagpur Plateau",
       "Most of Odisha",
       "Parts of West Bengal",
-      "Andaman and Nicobar islands"
+      "Andaman and Nicobar Islands"
     ],
-    timber: {
-      quality: "Valuable timber like Teak",
-      exploitation: "Comparatively easy to exploit due to high degree of gregariousness (pure stands)",
-      species: ["Teak", "Sal", "Laurel", "Rosewood", "Amla", "Jamun", "Bamboo"]
+    timberInfo: {
+      type: "Valuable timber",
+      keySpecies: "Teak (most important)",
+      exploitationNote: "Comparatively easy to exploit due to high degree of gregariousness (pure stands)"
     },
+    importantSpecies: [
+      "Teak", "Sal", "Laurel", "Rosewood", "Amla", "Jamun", "Bamboo"
+    ],
     importance: "HIGH"
   },
   {
     id: 4,
-    name: "Littoral and Swamp Forests (Mangroves)",
-    category: "Moist Tropical",
+    name: "Littoral and Swamp Forests",
+    category: "A. Moist Tropical",
+    rainfall: "Variable",
+    temperature: "Variable",
+    salinity: "0.5-35 ppt (brackish water range)",
+    altitude: "Sea level - deltas and estuaries",
+    waterType: "Fresh and brackish water",
+    percentageArea: "<4%",
+    alternateNames: ["Tidal Forests", "Delta Forests", "Mangrove Forests"],
     characteristics: [
-      "Can survive and grow in both fresh and brackish water (0.5-35 ppt salinity)",
+      "Can survive and grow in both fresh and brackish water",
       "Occur in and around deltas, estuaries and creeks prone to tidal influences",
-      "Dense mangroves occur along coastline in sheltered estuaries, tidal creeks, backwaters",
-      "Provides useful fuel wood",
-      "Most pronounced and densest is Sundarbans in Ganga delta"
+      "Littoral forests occur at several places along coast",
+      "Swamp forests confined to deltas",
+      "Dense mangroves along coastline in sheltered estuaries, tidal creeks, backwaters",
+      "Salt marshes and mudflats",
+      "Provides useful fuel wood"
     ],
     distribution: [
-      "Along entire coastline in sheltered areas",
+      "All along the coastline in sheltered estuaries, tidal creeks, backwaters",
       "Deltas of Ganga, Mahanadi, Godavari, Krishna, Cauvery",
-      "Sundarbans (Ganga delta) - most dense"
+      "Sunderbans in Ganga delta (most pronounced and densest)",
+      "Salt marshes and mudflats"
     ],
-    timber: {
+    timberInfo: {
       quality: "Hard and durable",
-      uses: "Construction, building purposes, making boats",
-      species: ["Sundri (Heritiera) - predominant in Sundarbans", "Agar", "Rhizophora", "Screw pines", "Canes", "Palms"]
+      uses: [
+        "Construction",
+        "Building purposes",
+        "Making boats",
+        "Fuel wood"
+      ]
+    },
+    importantSpecies: [
+      "Sundri/Sundari (Heritiera - predominant in Sunderbans)",
+      "Agar", "Rhizophora", "Screw Pines", "Canes", "Palms"
+    ],
+    keyConceptsExplained: {
+      brackishWater: "Mixture of seawater and fresh water in estuaries. Salinity can range from 0.5 to 35 ppt (parts per thousand)",
+      littoral: "Relating to or situated on the shore of sea or lake",
+      sunderbans: "Most pronounced and densest mangrove forest in Ganga delta, predominant species is Sundri (Heritiera)"
     },
     importance: "HIGH"
   },
   
-  // B. DRY TROPICAL FORESTS
+  // B. DRY TROPICAL FORESTS (3 types)
   {
     id: 5,
     name: "Tropical Dry Evergreen Forests",
-    category: "Dry Tropical",
+    category: "B. Dry Tropical",
     rainfall: "100 cm (mostly from NE monsoon Oct-Dec)",
-    temperature: "28°C",
-    humidity: "75%",
+    temperature: "About 28°C (mean annual)",
+    humidity: "About 75%",
+    altitude: "Coastal plains",
     percentageArea: "<4%",
+    unusualFeature: "Growth of evergreen forests in areas of such low rainfall is strange",
     characteristics: [
-      "Growth of evergreen forests in such low rainfall is strange",
       "Short statured trees, up to 12m high, with complete canopy",
       "Bamboos and grasses not conspicuous",
-      "Most land cleared for agriculture or casuarina plantations"
+      "Most land under these forests has been cleared for agriculture or Casuarina plantations"
     ],
     distribution: [
       "Along coasts of Tamil Nadu"
     ],
-    timber: {
-      species: ["Jamun", "Tamarind", "Neem"],
-      note: "Replaced by Casuarina plantations"
+    importantSpecies: [
+      "Jamun", "Tamarind", "Neem", "Casuarina (plantations)"
+    ],
+    casuarinaPlantationDetails: {
+      appearance: "Resembles feathery conifer",
+      height: "15-25 metres on average",
+      characteristics: [
+        "Rapid-growing, carefree species",
+        "Adaptable to varied sites: coastal sand dunes, high mountain slopes, hot humid tropics, semi-arid regions",
+        "Ability to fix atmospheric nitrogen"
+      ],
+      distributionInIndia: [
+        "Most popular farm forestry in Andhra Pradesh, Tamil Nadu",
+        "West Bengal, Odisha, Maharashtra, Gujarat, Karnataka"
+      ],
+      benefits: [
+        "Reduces damage in natural calamities",
+        "Line planting in coastal areas controls wind force",
+        "Tourism promotion (ornamental appearance)",
+        "Top quality firewood",
+        "Suitable for paper pulp - writing, printing, wrapping paper",
+        "Medicinal values"
+      ],
+      wastelandDevelopment: {
+        suitability: "Wide range of habitats, fast growth, salt tolerant, drought resistant, reclaim land, stabilize sand dunes",
+        intercropping: "Groundnut, cucumber, watermelons, sesamum, pulses can be raised along with plantation"
+      }
     },
-    importance: "MEDIUM",
-    specialNote: "Casuarina: Rapid-growing, nitrogen-fixing, 15-25m height, used for farm forestry in AP, TN, WB, Odisha, MH, Gujarat, Karnataka"
+    importance: "MEDIUM"
   },
   {
     id: 6,
     name: "Tropical Dry Deciduous Forests",
-    category: "Dry Tropical",
-    rainfall: "100-150 cm (originally 75-100 cm)",
-    percentageArea: "28%",
+    category: "B. Dry Tropical",
+    rainfall: "100-150 cm",
+    temperature: "Variable",
+    humidity: "Variable",
+    altitude: "Various elevations",
+    percentageArea: "28% (2nd largest forest type)",
+    transitionType: "Between moist deciduous (wetter side) and thorn forests (drier side)",
     characteristics: [
-      "Similar to moist deciduous but can grow in less rainfall",
-      "Transitional type - moist deciduous on wetter side, thorn forests on drier side",
+      "Similar to moist deciduous forests - shed leaves in dry season",
+      "Can grow in areas of comparatively less rainfall than moist deciduous",
+      "Represent transitional type",
       "Closed but uneven canopy",
-      "Mixture of few deciduous species rising to 20 metres",
-      "Enough light reaches ground for grass and climbers",
-      "Large tracts cleared for agriculture",
-      "Suffer from overgrazing, fire"
+      "Composed of mixture of few species of deciduous trees",
+      "Trees rise up to height of 20 metres",
+      "Undergrowth: Enough light reaches ground for grass and climbers growth",
+      "Large tracts cleared for agricultural purposes",
+      "Suffer from overgrazing and fire"
     ],
     distribution: [
       "Irregular wide strip from foot of Himalayas to Kanniyakumari",
-      "Except Rajasthan, Western Ghats and West Bengal"
+      "Exceptions: Rajasthan, Western Ghats, West Bengal"
     ],
-    timber: {
-      species: ["Teak", "Axlewood", "Rosewood", "Common bamboo", "Red sanders", "Laurel", "Satinwood"]
-    },
+    importantSpecies: [
+      "Teak", "Axlewood", "Rosewood", "Common Bamboo",
+      "Red Sanders", "Laurel", "Satinwood"
+    ],
+    threats: ["Overgrazing", "Fire", "Agricultural conversion"],
     importance: "HIGH"
   },
   {
     id: 7,
     name: "Tropical Thorn Forests",
-    category: "Dry Tropical",
-    rainfall: "<75 cm",
-    temperature: "25-30°C",
-    humidity: "<50%",
+    category: "B. Dry Tropical",
+    rainfall: "Less than 75 cm",
+    temperature: "25-30°C (mean)",
+    humidity: "Less than 50%",
+    altitude: "Plains and low hills",
     percentageArea: "<4%",
     characteristics: [
       "Trees are low (6-10 metres maximum) and widely scattered",
-      "Acacias and Euphorbias very prominent",
+      "Acacias and Euphorbias are very prominent",
       "Indian wild date is common",
-      "Some grasses grow in rainy season"
+      "Some grasses grow in rainy season",
+      "Degenerate into desert type in Thar desert"
     ],
     distribution: [
       "Rajasthan, south-western Punjab, western Haryana",
       "Kachchh and neighbouring parts of Saurashtra",
-      "Degenerate into desert type in Thar desert",
-      "Leeside of Western Ghats: Maharashtra, Karnataka, Telangana, AP, Tamil Nadu"
+      "Leeside of Western Ghats: large areas of Maharashtra, Karnataka, Telangana, Andhra Pradesh, Tamil Nadu"
     ],
-    timber: {
-      species: ["Neem", "Babul", "Cacti", "Indian wild date", "Acacias"]
-    },
+    importantSpecies: [
+      "Neem", "Babul", "Cactii", "Acacias", "Euphorbias", "Indian Wild Date"
+    ],
     importance: "MEDIUM"
   },
   
-  // C. MONTANE SUB-TROPICAL FORESTS
+  // C. MONTANE SUB-TROPICAL FORESTS (3 types)
   {
     id: 8,
     name: "Sub-tropical Broad-leaved Hill Forests",
-    category: "Montane Sub-tropical",
-    rainfall: "75-125 cm",
-    temperature: "18-21°C",
+    category: "C. Montane Sub-tropical",
+    rainfall: "75-125 cm (mean annual)",
+    temperature: "18-21°C (average annual)",
     humidity: "80%",
-    altitude: "1000-2000m",
+    altitude: "1000-2000m (Eastern Himalayas); 1070-1525m (Southern hills)",
     percentageArea: "<4%",
     characteristics: [
       "Forests of evergreen species",
-      "Climbers and epiphytes are common",
-      "Not so distinct in southern India - occur only in Nilgiri and Palni hills (1070-1525m)",
-      "Stunted rain-forest, not as luxuriant as true tropical evergreen"
+      "Climbers and epiphytes common",
+      "Not so distinct in southern parts of country",
+      "In southern parts: Nilgiri and Palni hills at 1070-1525m",
+      "Stunted rain-forest - not so luxuriant as true tropical evergreen"
     ],
     distribution: [
-      "Eastern Himalayas east of 88°E (1000-2000m)",
-      "Nilgiri and Palni hills (1070-1525m)",
-      "Higher parts of Western Ghats (Mahabaleshwar)",
+      "Eastern Himalayas east of 88°E longitude (1000-2000m)",
+      "Nilgiri and Palni hills (southern parts)",
+      "Higher parts of Western Ghats: Mahabaleshwar",
       "Summits of Satpura and Maikal Range",
       "Highlands of Bastar",
       "Mt. Abu in Aravali Range"
     ],
-    timber: {
-      species: ["Evergreen oaks", "Chestnuts", "Ash", "Beech", "Sals", "Pines"]
-    },
+    importantSpecies: [
+      "Evergreen Oaks", "Chestnuts", "Ash", "Beech", "Sals", "Pines"
+    ],
     importance: "MEDIUM"
   },
   {
     id: 9,
     name: "Sub-tropical Moist Pine Forests",
-    category: "Montane Sub-tropical",
+    category: "C. Montane Sub-tropical",
+    rainfall: "Variable",
+    temperature: "Variable",
+    humidity: "Variable",
     altitude: "1000-2000m",
     percentageArea: "6%",
+    dominantSpecies: "Chir or Chil Pine",
     characteristics: [
-      "Chir or Chil is most dominant tree forming pure stands",
+      "Chir or Chil is most dominant tree",
+      "Forms pure stands",
       "Provides valuable timber"
     ],
     distribution: [
-      "Western Himalayas between 73°E and 88°E (1000-2000m)",
-      "Some hilly regions of Arunachal Pradesh",
+      "Western Himalayas between 73°E and 88°E longitudes (1000-2000m)",
+      "Hilly regions of Arunachal Pradesh",
       "Manipur, Naga Hills, Khasi Hills"
     ],
-    timber: {
-      quality: "Valuable timber for furniture, boxes, buildings",
-      uses: "Also used for producing resin and turpentine",
-      species: ["Chir/Chil Pine - predominant"]
+    timberInfo: {
+      uses: [
+        "Furniture",
+        "Boxes",
+        "Buildings",
+        "Producing resin",
+        "Producing turpentine"
+      ],
+      quality: "Valuable timber"
+    },
+    importantSpecies: ["Chir Pine", "Chil Pine"],
+    keyConceptsExplained: {
+      chirPine: "Most dominant tree in sub-tropical pine forests, forms pure stands making exploitation easier, used for resin and turpentine production besides timber"
     },
     importance: "HIGH"
   },
   {
     id: 10,
     name: "Sub-tropical Dry Evergreen Forests",
-    category: "Montane Sub-tropical",
+    category: "C. Montane Sub-tropical",
     rainfall: "50-100 cm (15-25 cm in Dec-Mar)",
-    altitude: "Up to 1000m",
+    temperature: "Summers sufficiently hot, winters very cold",
+    humidity: "Low",
+    altitude: "Up to about 1000m",
     percentageArea: "<4%",
     characteristics: [
-      "Low scrub forest with small evergreen stunted trees and shrubs",
-      "Summers sufficiently hot, winters very cold"
+      "Low scrub forest",
+      "Small evergreen stunted trees and shrubs"
     ],
     distribution: [
-      "Bhabar, Shiwaliks",
+      "Bhabar",
+      "Shiwaliks",
       "Western Himalayas up to 1000m"
     ],
-    timber: {
-      species: ["Olive", "Acacia modesta", "Pistacia"]
-    },
+    importantSpecies: [
+      "Olive", "Acacia Modesta", "Pistacia"
+    ],
+    climateNote: "Most predominant species adapted to hot summers and very cold winters",
     importance: "MEDIUM"
   },
   
-  // D. MONTANE TEMPERATE FORESTS
+  // D. MONTANE TEMPERATE FORESTS (3 types)
   {
     id: 11,
     name: "Montane Wet Temperate Forests",
-    category: "Montane Temperate",
-    rainfall: "150-300 cm",
-    temperature: "11-14°C",
-    humidity: ">80%",
+    category: "D. Montane Temperate",
+    rainfall: "150-300 cm (mean annual)",
+    temperature: "11-14°C (mean annual)",
+    humidity: "Over 80% (average relative)",
     altitude: "1800-3000m",
     percentageArea: "<4%",
+    unusualFeature: "Trees rarely exceed 6m height despite high rainfall",
     characteristics: [
       "Closed evergreen forests",
       "Trunks have large girth",
@@ -290,79 +398,106 @@ export const forestTypes = [
       "Higher hills of Tamil Nadu and Kerala",
       "Eastern Himalayan region"
     ],
-    timber: {
-      species: ["Deodar", "Chilauni", "Indian chestnut", "Birch", "Plum", "Machilus", "Cinnamomum", "Litsea", "Magnolia", "Blue pine", "Oak", "Hemlock"]
-    },
+    importantSpecies: [
+      "Deodar", "Chilauni", "Indian Chestnut", "Birch", "Plum",
+      "Machilus", "Cinnamomum", "Litsea", "Magnolia",
+      "Blue Pine", "Oak", "Hemlock"
+    ],
     importance: "MEDIUM"
   },
   {
     id: 12,
     name: "Himalayan Moist Temperate Forests",
-    category: "Montane Temperate",
-    rainfall: "150-250 cm",
+    category: "D. Montane Temperate",
+    rainfall: "150-250 cm (annual)",
+    temperature: "Temperate range",
+    humidity: "High",
     altitude: "1500-3300m",
     percentageArea: "<4%",
     characteristics: [
       "Mainly composed of coniferous species",
       "Species occur in mostly pure stands",
       "Trees are 30-50m high",
-      "Form high but fairly open forest with shrubby undergrowth including oaks, rhododendrons, bamboos"
+      "Form high but fairly open forest",
+      "Shrubby undergrowth including oaks, rhododendrons and some bamboos"
     ],
     distribution: [
       "Entire length of Himalayan range (1500-3300m)",
-      "Kashmir, Himachal Pradesh, Uttarakhand, Darjeeling, Sikkim"
+      "Kashmir, Himachal Pradesh, Uttarakhand",
+      "Darjeeling, Sikkim"
     ],
-    timber: {
-      quality: "Fine wood for construction, timber and railway sleepers",
-      species: ["Pines", "Cedars", "Silver firs", "Spruce", "Oaks", "Rhododendrons", "Bamboos"]
+    timberInfo: {
+      quality: "Fine wood",
+      uses: [
+        "Construction",
+        "Timber",
+        "Railway sleepers"
+      ]
     },
+    importantSpecies: [
+      "Pines", "Cedars", "Silver Firs", "Spruce",
+      "Oaks (undergrowth)", "Rhododendrons (undergrowth)", "Bamboos (undergrowth)"
+    ],
     importance: "HIGH"
   },
   {
     id: 13,
     name: "Himalayan Dry Temperate Forests",
-    category: "Montane Temperate",
-    rainfall: "<100 cm (mostly snow)",
+    category: "D. Montane Temperate",
+    rainfall: "Below 100 cm (mostly snow)",
+    temperature: "Cold",
+    humidity: "Low",
+    altitude: "Inner dry ranges",
     percentageArea: "<4%",
+    monsoonNote: "Found where SW monsoon is very feeble",
     characteristics: [
       "Coniferous forests with xerophytic shrubs",
-      "Found in inner dry ranges where SW monsoon is very feeble"
+      "Precipitation mostly in form of snow"
     ],
     distribution: [
-      "Ladakh, Lahul, Chamba",
-      "Kinnaur, Garhwal, Sikkim"
+      "Inner dry ranges of Himalayas",
+      "Ladakh, Lahul, Chamba, Kinnaur, Garhwal, Sikkim"
     ],
-    timber: {
-      species: ["Deodar", "Oak", "Ash", "Olive"]
+    importantSpecies: [
+      "Deodar", "Oak", "Ash", "Olive"
+    ],
+    keyConceptsExplained: {
+      xerophytic: "Plants adapted to extremely dry conditions, found in these dry temperate regions as shrubs"
     },
     importance: "MEDIUM"
   },
   
-  // E. ALPINE FORESTS
+  // E. ALPINE FORESTS (3 types)
   {
     id: 14,
     name: "Sub-Alpine Forests",
-    category: "Alpine",
+    category: "E. Alpine",
+    rainfall: "Variable",
+    temperature: "Cold",
+    humidity: "Variable",
     altitude: "2900-3500m",
     percentageArea: "<4%",
+    position: "Occurs lower than alpine scrub and grasslands",
     characteristics: [
       "Mixture of coniferous and broad-leaved trees",
-      "Coniferous trees attain height of 30m",
-      "Broad-leaved trees reach only 10m",
-      "Occurs lower alpine scrub and grasslands"
+      "Coniferous trees attain height of about 30m",
+      "Broad-leaved trees reach only 10m"
     ],
     distribution: [
-      "Himalayan region (2900-3500m)"
+      "Himalayas at altitudes 2900-3500m"
     ],
-    timber: {
-      species: ["Fir", "Spruce", "Rhododendron"]
-    },
+    importantSpecies: [
+      "Fir", "Spruce", "Rhododendron"
+    ],
     importance: "MEDIUM"
   },
   {
     id: 15,
     name: "Moist Alpine Scrub",
-    category: "Alpine",
+    category: "E. Alpine",
+    rainfall: "Adequate",
+    temperature: "Very cold",
+    humidity: "High",
     altitude: "3000m to snowline",
     percentageArea: "<4%",
     characteristics: [
@@ -370,105 +505,120 @@ export const forestTypes = [
       "Extends from 3000m to snowline"
     ],
     distribution: [
-      "Himalayan region (3000m to snowline)"
+      "Himalayas from 3000m to snowline"
     ],
-    timber: {
-      species: ["Rhododendron", "Birch"]
-    },
-    importance: "LOW"
+    importantSpecies: [
+      "Rhododendron", "Birch"
+    ],
+    importance: "MEDIUM"
   },
   {
     id: 16,
     name: "Dry Alpine Scrub",
-    category: "Alpine",
-    altitude: ">3500m",
+    category: "E. Alpine",
+    rainfall: "Very low",
+    temperature: "Very cold",
+    humidity: "Very low",
+    altitude: "Over 3500m",
     percentageArea: "<4%",
+    position: "Uppermost limit of scrub",
     characteristics: [
-      "Uppermost limit of scrub",
-      "Xerophytic, dwarf shrubs",
-      "Found in dry zone above 3500m"
+      "Xerophytic dwarf shrubs",
+      "Found in dry zone"
     ],
     distribution: [
-      "Dry zones of Himalayan region (>3500m)"
+      "Himalayas above 3500m in dry zones"
     ],
-    timber: {
-      species: ["Juniper", "Honeysuckle", "Artemesia"]
-    },
-    importance: "LOW"
+    importantSpecies: [
+      "Juniper", "Honeysuckle", "Artemesia"
+    ],
+    importance: "MEDIUM"
   }
 ];
 
-// Key Facts about Indian Forests
+// Comprehensive Forest Facts from PMF IAS
 export const forestFacts = [
   {
-    fact: "Rainfall classification: >200cm (Evergreen), 100-200cm (Deciduous), 50-100cm (Savanna), 25-50cm (Thorn), <25cm (Desert)",
+    fact: "India's vegetation divided into 5 main types and 16 sub-types based on rainfall, temperature, soil and topography",
     category: "Classification"
   },
   {
-    fact: "India's vegetation divided into 5 main types and 16 sub-types",
-    category: "Classification"
+    fact: "Rainfall >200cm → Evergreen Rain Forests; 100-200cm → Monsoon Deciduous; 50-100cm → Savanna; 25-50cm → Semi-arid Scrub; <25cm → Desert",
+    category: "Rainfall Criteria"
   },
   {
-    fact: "Tropical Moist Deciduous: 37% (largest forest type)",
-    category: "Area Coverage"
+    fact: "Tropical Moist Deciduous is largest (37% of forest area)",
+    category: "Coverage"
   },
   {
-    fact: "Tropical Dry Deciduous: 28%",
-    category: "Area Coverage"
+    fact: "Tropical Dry Deciduous is 2nd largest (28% of forest area)",
+    category: "Coverage"
   },
   {
-    fact: "Tropical Wet Evergreen: 8%",
-    category: "Area Coverage"
+    fact: "Tropical Wet Evergreen covers 8%, Sub-tropical Pine 6%, Semi-Evergreen 4%",
+    category: "Coverage"
   },
   {
-    fact: "Sub-Tropical Moist Hill: 6%",
-    category: "Area Coverage"
+    fact: "Mesophytes: Plants adapted to neither too dry nor too wet conditions (unlike hydrophytes in water or xerophytes in desert)",
+    category: "Concepts"
   },
   {
-    fact: "Tropical Semi-Evergreen: 4%",
-    category: "Area Coverage"
+    fact: "Epiphytes: Non-parasitic plants growing on trees struggling upward for sunlight",
+    category: "Concepts"
   },
   {
-    fact: "Mesophytes: Plants adapted to neither too dry nor too wet climate (unlike hydrophytic in water or xerophytic in dry)",
-    category: "Plant Adaptations"
+    fact: "Gregariousness: Living in colonies forming pure stands - makes timber exploitation easier",
+    category: "Concepts"
   },
   {
-    fact: "Epiphytes: Plants growing non-parasitically on trees",
-    category: "Plant Adaptations"
+    fact: "Buttressed trunks: Support structures for stability in tropical forests",
+    category: "Concepts"
   },
   {
-    fact: "Buttressed trunks: Common in semi-evergreen and tropical forests for stability",
-    category: "Plant Adaptations"
+    fact: "Brackish water salinity: 0.5-35 ppt (mixture of seawater & freshwater in estuaries where mangroves thrive)",
+    category: "Concepts"
   },
   {
-    fact: "Brackish water: Mixture of seawater and fresh water in estuaries (0.5-35 ppt salinity)",
-    category: "Coastal Features"
+    fact: "Sunderbans (Ganga delta) has densest mangroves with Sundri (Heritiera) as predominant species",
+    category: "Special Features"
   },
   {
-    fact: "Sundarbans: Most dense mangrove forest, Sundri (Heritiera) is predominant species",
-    category: "Famous Forests"
+    fact: "Casuarina: Nitrogen-fixing tree (15-25m), rapid-growing, used for coastal protection, firewood, paper pulp, wasteland development",
+    category: "Special Trees"
   },
   {
-    fact: "Casuarina: Rapid-growing, nitrogen-fixing, used for wasteland development, paper pulp, firewood",
-    category: "Plantation"
+    fact: "Chir/Chil Pine: Dominant at 1000-2000m, forms pure stands, used for timber, resin & turpentine production",
+    category: "Special Trees"
   },
   {
-    fact: "Chir/Chil Pine: Dominant in Sub-tropical Moist Pine forests, used for furniture and resin/turpentine",
+    fact: "Teak: Most valuable timber from Tropical Moist/Dry Deciduous forests",
     category: "Timber"
   },
   {
-    fact: "Pure stands: Forests with single species predominance - easier to exploit for timber",
+    fact: "Hardwood: Tropical Evergreen & Semi-Evergreen produce fine-grained, hard, durable timber (difficult to exploit due to dense undergrowth)",
     category: "Timber"
   },
   {
-    fact: "Gregariousness: Trees living in flocks/colonies forming pure stands",
-    category: "Forest Characteristics"
+    fact: "Temperature is major factor in Himalayas >900m elevation - vegetation changes from tropical to sub-tropical to temperate to alpine",
+    category: "Altitudinal Zonation"
+  },
+  {
+    fact: "Montane Wet Temperate forests unusual - despite 150-300cm rainfall, trees rarely exceed 6m height",
+    category: "Unusual Features"
+  },
+  {
+    fact: "Tropical Dry Evergreen in Tamil Nadu unusual - evergreen growth despite only 100cm rainfall",
+    category: "Unusual Features"
+  },
+  {
+    fact: "Casuarina intercropping: Groundnut, cucumber, watermelons, sesamum, pulses can grow alongside plantations",
+    category: "Agriculture"
+  },
+  {
+    fact: "Pure stands advantage: Single species dominance makes timber industry more profitable (common in Semi-Evergreen, Moist Pine, Himalayan Moist Temperate)",
+    category: "Economics"
   }
 ];
-
-// Export statement for quiz questions moved to end
-
-// Quiz Questions - 60 comprehensive UPSC-style questions based on PMF IAS data
 export const quizQuestions = [
   // Tropical Wet Evergreen (8 questions)
   {
