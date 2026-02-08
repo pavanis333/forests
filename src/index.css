@@ -62,6 +62,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 3px solid #2e7d32;
+  overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -179,7 +180,7 @@ body {
 .flashcard-inner {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  height: 450px;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -194,7 +195,7 @@ body {
 .flashcard-back {
   position: absolute;
   width: 100%;
-  min-height: 400px;
+  height: 450px;
   backface-visibility: hidden;
   border-radius: 16px;
   padding: 40px;
@@ -203,6 +204,7 @@ body {
   justify-content: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border: 3px solid #2e7d32;
+  overflow: hidden;
 }
 
 .flashcard-front {

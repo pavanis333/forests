@@ -280,7 +280,7 @@ function App() {
               <p className="flashcard-hint">👆 Tap to flip</p>
             </div>
             <div className="flashcard-back">
-              <div style={{textAlign: 'left', width: '100%', maxHeight: '400px', overflowY: 'auto', paddingRight: '10px'}}>
+              <div style={{textAlign: 'left', width: '100%', height: '100%', overflowY: 'auto', paddingRight: '10px'}}>
                 <div className="forest-info"><strong>Category:</strong> {forest.category}</div>
                 
                 {/* Climatic Conditions */}
